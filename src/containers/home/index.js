@@ -1,4 +1,5 @@
 
+import { useEffect, useState } from 'react'
 import sh2 from '../../assets/images/sh2.jpeg'
 import sh3 from '../../assets/images/sh3.jpeg'
 import sh4 from '../../assets/images/sh4.jpeg'
@@ -6,6 +7,13 @@ import sh4 from '../../assets/images/sh4.jpeg'
 import Layout from '../../hoc/layout'
 
 export default function Home() {
+
+    const [data, setData] = useState([])
+
+    useEffect(() => {
+
+    }, [])
+
     return (
         <Layout
             headerTitle="Reebok Store"
