@@ -1,5 +1,6 @@
 
 import './index.scss'
+import { Link } from 'react-router-dom'
 export default function Footer() {
     return (
         <footer className='bg-dark text-light'>
@@ -10,12 +11,12 @@ export default function Footer() {
                     </div>
                     <div className='col-6 text-end'>
 
-                        <a class="nav-link d-inline-block" aria-current="page" href="#">Home</a>
-                        <a class="nav-link d-inline-block ms-2" href="#">About</a>
+                        <Link class="nav-link d-inline-block" aria-current="page" to="/">Home</Link>
+                        <Link class="nav-link d-inline-block ms-2" to="/about">About</Link>
 
-                        <a class="nav-link d-inline-block ms-2" href="#">Products</a>
+                        <Link class="nav-link d-inline-block ms-2" to="/products">Products</Link>
 
-                        <a class="nav-link d-inline-block ms-2" href="#">Contact</a>
+                        <Link class="nav-link d-inline-block ms-2" to="/contact">Contact</Link>
 
                     </div>
                 </div>

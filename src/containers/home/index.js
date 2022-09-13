@@ -1,4 +1,4 @@
-import sh1 from '../../assets/images/sh1.jpeg'
+
 import sh2 from '../../assets/images/sh2.jpeg'
 import sh3 from '../../assets/images/sh3.jpeg'
 import sh4 from '../../assets/images/sh4.jpeg'
@@ -18,28 +18,28 @@ export default function Home() {
             <h3>Featured Items</h3>
             <div className='row'>
                 <div className='col-3 mb-3'>
-                    <img src={require('../../assets/images/sh1.jpeg')} height="150" className="w-100" />
+                    <img src={require('../../assets/images/sh1.jpeg')} height="150" className="w-100" alt="..." />
                 </div>
                 <div className='col-3 mb-3'>
-                    <img src={sh2} height="150" className="w-100" />
+                    <img src={sh2} height="150" className="w-100" alt="..." />
                 </div>
                 <div className='col-3 mb-3'>
-                    <img src={sh3} height="150" className="w-100" />
+                    <img src={sh3} height="150" className="w-100" alt="..." />
                 </div>
                 <div className='col-3 mb-3'>
-                    <img src={sh4} height="150" className="w-100" />
+                    <img src={sh4} height="150" className="w-100" alt="..." />
                 </div>
                 <div className='col-3 mb-3'>
-                    <img src={sh4} height="150" className="w-100" />
+                    <img src={sh4} height="150" className="w-100" alt="..." />
                 </div>
                 <div className='col-3 mb-3'>
-                    <img src={sh4} height="150" className="w-100" />
+                    <img src={sh4} height="150" className="w-100" alt="..." />
                 </div>
                 <div className='col-3 mb-3'>
-                    <img src={sh4} height="150" className="w-100" />
+                    <img src={sh4} height="150" className="w-100" alt="..." />
                 </div>
                 <div className='col-3 mb-3'>
-                    <img src={sh4} height="150" className="w-100" />
+                    <img src={sh4} height="150" className="w-100" alt="..." />
                 </div>
             </div>
         </Layout>

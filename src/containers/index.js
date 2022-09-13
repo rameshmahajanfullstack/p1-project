@@ -3,9 +3,11 @@ import About from "./about"
 import Products from "./products"
 import Contact from "./contact"
 
-export default {
+const container = {
     Home,
     About,
     Products,
     Contact
 }
+
+export default container

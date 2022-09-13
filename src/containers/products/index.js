@@ -15,33 +15,33 @@ export default function Products() {
 
             <div className='row'>
                 <div className='col-4 mb-3'>
-                    <img src={sh1} height="200" className="w-100" />
+                    <img src={sh1} height="200" className="w-100" alt="..." />
                 </div>
                 <div className='col-4 mb-3'>
-                    <img src={sh2} height="200" className="w-100" />
+                    <img src={sh2} height="200" className="w-100" alt="..." />
                 </div>
                 <div className='col-4 mb-3'>
-                    <img src={sh3} height="200" className="w-100" />
-                </div>
-
-                <div className='col-4 mb-3'>
-                    <img src={sh1} height="200" className="w-100" />
-                </div>
-                <div className='col-4 mb-3'>
-                    <img src={sh2} height="200" className="w-100" />
-                </div>
-                <div className='col-4 mb-3'>
-                    <img src={sh3} height="200" className="w-100" />
+                    <img src={sh3} height="200" className="w-100" alt="..." />
                 </div>
 
                 <div className='col-4 mb-3'>
-                    <img src={sh1} height="200" className="w-100" />
+                    <img src={sh1} height="200" className="w-100" alt="..." />
                 </div>
                 <div className='col-4 mb-3'>
-                    <img src={sh2} height="200" className="w-100" />
+                    <img src={sh2} height="200" className="w-100" alt="..." />
                 </div>
                 <div className='col-4 mb-3'>
-                    <img src={sh3} height="200" className="w-100" />
+                    <img src={sh3} height="200" className="w-100" alt="..." />
+                </div>
+
+                <div className='col-4 mb-3'>
+                    <img src={sh1} height="200" className="w-100" alt="..." />
+                </div>
+                <div className='col-4 mb-3'>
+                    <img src={sh2} height="200" className="w-100" alt="..." />
+                </div>
+                <div className='col-4 mb-3'>
+                    <img src={sh3} height="200" className="w-100" alt="..." />
                 </div>
 
             </div>

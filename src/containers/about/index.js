@@ -21,13 +21,13 @@ export default function About() {
             <h3>Team Members</h3>
             <div className='row'>
                 <div className='col-4 mb-4'>
-                    <img src={sh1} height="200" className="w-100" />
+                    <img src={sh1} height="200" className="w-100" alt="..." />
                 </div>
                 <div className='col-4 mb-4'>
-                    <img src={sh2} height="200" className="w-100" />
+                    <img src={sh2} height="200" className="w-100" alt="..." />
                 </div>
                 <div className='col-4 mb-3'>
-                    <img src={sh3} height="200" className="w-100" />
+                    <img src={sh3} height="200" className="w-100" alt="..." />
                 </div>
 
             </div>
