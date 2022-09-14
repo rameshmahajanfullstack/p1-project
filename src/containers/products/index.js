@@ -1,9 +1,24 @@
-import sh1 from '../../assets/images/sh1.jpeg'
-import sh2 from '../../assets/images/sh2.jpeg'
-import sh3 from '../../assets/images/sh3.jpeg'
+import { useEffect, useState } from 'react'
 import Layout from '../../hoc/layout'
+// import products from '../../services/json/products.json'
+import { getProductsList } from '../../services/products'
 
 export default function Products() {
+
+    const [products, setProducts] = useState([])
+
+    useEffect(() => {
+        getProducts()
+    }, [])
+
+    const getProducts = async () => {
+        let response = await getProductsList()
+
+        if (response.status === 200) {
+            setProducts(response.data)
+        }
+    }
+
     return (
         <Layout
             headerTitle="Latest Products"
@@ -14,35 +29,24 @@ export default function Products() {
             <h1>Latest Products</h1>
 
             <div className='row'>
-                <div className='col-4 mb-3'>
-                    <img src={sh1} height="200" className="w-100" alt="..." />
-                </div>
-                <div className='col-4 mb-3'>
-                    <img src={sh2} height="200" className="w-100" alt="..." />
-                </div>
-                <div className='col-4 mb-3'>
-                    <img src={sh3} height="200" className="w-100" alt="..." />
-                </div>
 
-                <div className='col-4 mb-3'>
-                    <img src={sh1} height="200" className="w-100" alt="..." />
-                </div>
-                <div className='col-4 mb-3'>
-                    <img src={sh2} height="200" className="w-100" alt="..." />
-                </div>
-                <div className='col-4 mb-3'>
-                    <img src={sh3} height="200" className="w-100" alt="..." />
-                </div>
+                {products.map((product, key) => {
+                    return (
+                        <div className='col-4 mb-3'>
+                            <div class="card">
+                                <img src={product.image} class="card-img-top" alt="..." />
+                                <div class="card-body">
+                                    <h5 class="card-title">{product.productName}</h5>
+                                    <p class="card-text"><strong>${product.price}</strong></p>
+                                    <p class="card-text">{product.productDesc}</p>
+                                    <a href="/" class="btn btn-primary">Add to Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    )
+                })}
 
-                <div className='col-4 mb-3'>
-                    <img src={sh1} height="200" className="w-100" alt="..." />
-                </div>
-                <div className='col-4 mb-3'>
-                    <img src={sh2} height="200" className="w-100" alt="..." />
-                </div>
-                <div className='col-4 mb-3'>
-                    <img src={sh3} height="200" className="w-100" alt="..." />
-                </div>
+
 
             </div>
         </Layout>

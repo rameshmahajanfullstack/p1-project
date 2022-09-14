@@ -1,0 +1,44 @@
+[
+    {
+        "id": 101,
+        "productName": "Product 101",
+        "productDesc": "Lorem ipsum...",
+        "price": 150,
+        "image": "https://assets.reebok.com/images/w_766,h_766,f_auto,q_auto,fl_lossy,c_fill,g_auto/6b8fbc44e01041e28351addd010c573f_9366/reebok-nano-x2-mens-training-shoes.jpg"
+    },
+    {
+        "id": 102,
+        "productName": "Product 102",
+        "productDesc": "Lorem ipsum...",
+        "price": 190,
+        "image": "https://assets.reebok.com/images/w_766,h_766,f_auto,q_auto,fl_lossy,c_fill,g_auto/52beb10da5924d6689caad1f00e2c108_9366/club-c-85-vintage-shoes.jpg"
+    },
+    {
+        "id": 103,
+        "productName": "Product 103",
+        "productDesc": "Lorem ipsum...",
+        "price": 690,
+        "image": "https://assets.reebok.com/images/w_766,h_766,f_auto,q_auto,fl_lossy,c_fill,g_auto/8e725efcdefc4961a11cadda010d415e_9366/question-mid-basketball-shoes.jpg"
+    },
+    {
+        "id": 104,
+        "productName": "Product 104",
+        "productDesc": "Lorem ipsum...",
+        "price": 150,
+        "image": "https://assets.reebok.com/images/w_766,h_766,f_auto,q_auto,fl_lossy,c_fill,g_auto/9923088fcba641758d42ae31008e9a23_9366/nano-x2-mens-training-shoes.jpg"
+    },
+    {
+        "id": 105,
+        "productName": "Product 105",
+        "productDesc": "Lorem ipsum...",
+        "price": 900,
+        "image": "https://assets.reebok.com/images/w_766,h_766,f_auto,q_auto,fl_lossy,c_fill,g_auto/57e77477c8b641eda562ab96015d61b1_9366/trail-cruiser-mens-shoes.jpg"
+    },
+    {
+        "id": 106,
+        "productName": "Product 106",
+        "productDesc": "Lorem ipsum...",
+        "price": 190,
+        "image": "https://assets.reebok.com/images/w_766,h_766,f_auto,q_auto,fl_lossy,c_fill,g_auto/2671a2f9cfd04f7fad1badc800d8c71c_9366/reebok-nano-x2-mens-training-shoes.jpg"
+    }
+]
