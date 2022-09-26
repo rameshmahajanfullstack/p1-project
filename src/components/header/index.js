@@ -3,12 +3,16 @@ import './index.scss'
 import Logo from '../../assets/images/logo.svg'
 
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
 
 export default function Header({
     headerText = "Welcome to Reebok",
     headerTitle = "Reebok",
     activePage = "home"
 }) {
+
+    const [showMenu, setShowMenu] = useState(false)
+
     return (
         <header>
             <nav class="navbar navbar-expand-lg navbar-dark bg-primary py-3">
@@ -16,10 +20,14 @@ export default function Header({
                     <Link class="navbar-brand" to="/">
                         <img src={Logo} alt="Reebok" height="40" />
                     </Link>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <button onClick={() => {
+
+                        setShowMenu(prevState => !prevState)
+
+                    }} class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class={`collapse navbar-collapse ${showMenu && "show"}`}>
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto my-0">
                             <li class="nav-item">
                                 <Link class={`nav-link ${activePage === "home" && "active"}`} to="/">Home</Link>
@@ -32,6 +40,12 @@ export default function Header({
                             </li>
                             <li class="nav-item">
                                 <Link class={`nav-link ${activePage === "contact" && "active"}`} to="/contact">Contact</Link>
+                            </li>
+                            <li class="nav-item">
+                                <Link class={`nav-link ${activePage === "login" && "active"}`} to="/login">Login</Link>
+                            </li>
+                            <li class="nav-item">
+                                <Link class={`nav-link ${activePage === "signup" && "active"}`} to="/sign-up">Sign Up</Link>
                             </li>
                         </ul>
                         <form class="d-flex" role="search">

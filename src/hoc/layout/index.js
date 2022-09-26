@@ -4,7 +4,7 @@ import Header from '../../components/header'
 import Footer from '../../components/footer'
 import Sidebar from '../../components/sidebar'
 
-export default function Layout({ headerTitle, headerText, activePage, children }) {
+export default function Layout({ headerTitle, headerText, activePage, children, hideSidebar = false }) {
 
     return (
         <div className='layout-wrapper'>
@@ -19,14 +19,17 @@ export default function Layout({ headerTitle, headerText, activePage, children }
 
                 <div className='row'>
 
-                    <div className='col-9 pe-5'>
+                    <div className={`col-12 ${hideSidebar ? "col-md-12" : "col-md-9"}`}>
                         {/* here will be our content */}
                         {children}
                     </div>
 
-                    <div className='col-3 px-3'>
-                        <Sidebar />
-                    </div>
+                    {!hideSidebar &&
+
+                        <div className='col-12 col-md-3 px-3'>
+                            <Sidebar />
+                        </div>
+                    }
 
                 </div>
 
