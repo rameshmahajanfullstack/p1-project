@@ -2,8 +2,9 @@ import './index.scss'
 
 import Logo from '../../assets/images/logo.svg'
 
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
+import { isLoggedIn, removeSession } from '../../util/helpers/sessions'
 
 export default function Header({
     headerText = "Welcome to Reebok",
@@ -12,6 +13,7 @@ export default function Header({
 }) {
 
     const [showMenu, setShowMenu] = useState(false)
+    const navigate = useNavigate()
 
     return (
         <header>
@@ -41,12 +43,30 @@ export default function Header({
                             <li class="nav-item">
                                 <Link class={`nav-link ${activePage === "contact" && "active"}`} to="/contact">Contact</Link>
                             </li>
-                            <li class="nav-item">
-                                <Link class={`nav-link ${activePage === "login" && "active"}`} to="/login">Login</Link>
-                            </li>
-                            <li class="nav-item">
-                                <Link class={`nav-link ${activePage === "signup" && "active"}`} to="/sign-up">Sign Up</Link>
-                            </li>
+                            {isLoggedIn() ?
+                                <>
+                                    <li class="nav-item">
+                                        <Link class={`nav-link ${activePage === "my-account" && "active"}`} to="/my-account">My Account</Link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="/" class={`nav-link`} onClick={(e) => {
+                                            e.preventDefault();
+                                            removeSession("token");
+                                            navigate("/login")
+                                        }}>Logout</a>
+                                    </li>
+                                </>
+                                :
+
+                                <>
+                                    <li class="nav-item">
+                                        <Link class={`nav-link ${activePage === "login" && "active"}`} to="/login">Login</Link>
+                                    </li>
+                                    <li class="nav-item">
+                                        <Link class={`nav-link ${activePage === "signup" && "active"}`} to="/sign-up">Sign Up</Link>
+                                    </li>
+                                </>
+                            }
                         </ul>
                         <form class="d-flex" role="search">
                             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />

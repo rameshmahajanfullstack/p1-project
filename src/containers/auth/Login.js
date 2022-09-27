@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 import { toast } from 'react-toastify'
 import { useNavigate } from 'react-router-dom'
 import { userLogin } from '../../services/auth'
-
+import { setSession } from '../../util/helpers/sessions'
 
 export default function Login() {
 
@@ -70,6 +70,10 @@ export default function Login() {
 
             setEmail("")
             setPassword("")
+
+            // session storage
+
+            setSession("token", { ...user })
 
             navigate("/")
 
