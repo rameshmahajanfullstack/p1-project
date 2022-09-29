@@ -5,6 +5,8 @@ import Logo from '../../assets/images/logo.svg'
 import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { isLoggedIn, removeSession } from '../../util/helpers/sessions'
+import { removeUser } from '../../redux/slices/auth'
+import { useDispatch, useSelector } from 'react-redux'
 
 export default function Header({
     headerText = "Welcome to Reebok",
@@ -14,6 +16,9 @@ export default function Header({
 
     const [showMenu, setShowMenu] = useState(false)
     const navigate = useNavigate()
+    const dispatch = useDispatch()
+
+    const user = useSelector(state => state.auth.user)
 
     return (
         <header>
@@ -49,11 +54,15 @@ export default function Header({
                                         <Link class={`nav-link ${activePage === "my-account" && "active"}`} to="/my-account">My Account</Link>
                                     </li>
                                     <li class="nav-item">
+
                                         <a href="/" class={`nav-link`} onClick={(e) => {
                                             e.preventDefault();
                                             removeSession("token");
+
+                                            dispatch(removeUser())
+
                                             navigate("/login")
-                                        }}>Logout</a>
+                                        }}>Welcome {user.firstName} (Logout)</a>
                                     </li>
                                 </>
                                 :

@@ -8,6 +8,9 @@ import { toast } from 'react-toastify'
 import { useNavigate } from 'react-router-dom'
 import { userLogin } from '../../services/auth'
 import { setSession } from '../../util/helpers/sessions'
+import { setUser } from '../../redux/slices/auth'
+import { useDispatch } from 'react-redux'
+
 
 export default function Login() {
 
@@ -17,6 +20,7 @@ export default function Login() {
         email: "",
         password: ""
     })
+    const dispatch = useDispatch()
     const navigate = useNavigate()
 
     const onLogin = async (e) => {
@@ -74,6 +78,10 @@ export default function Login() {
             // session storage
 
             setSession("token", { ...user })
+
+            // dispatch action redux
+
+            dispatch(setUser(user))
 
             navigate("/")
 

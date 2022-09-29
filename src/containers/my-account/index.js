@@ -1,10 +1,9 @@
 import Layout from '../../hoc/layout'
-
-import { getSession } from '../../util/helpers/sessions'
+import { useSelector } from 'react-redux'
 
 export default function MyAccount() {
 
-    let user = getSession("token")
+    let user = useSelector(state => state.auth.user)
 
     return (
         <Layout
